@@ -25,7 +25,7 @@ esac
 
 export $(ps e | grep $USER | grep -oP 'DBUS_SESSION_BUS_ADDRESS=.*? ' | head -1)
 
-gsettings set org.gnome.desktop.background picture-uri file:///home/capncanuck/Pictures/"$(echo $chosen | sed 's/ /%20/g')"
+gsettings set org.gnome.desktop.background picture-uri "$HOME/Pictures/$(echo $chosen | sed 's/ /%20/g')"
 gsettings set org.gnome.desktop.background picture-options $style
 
 exit
